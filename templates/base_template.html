@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="design_template.css">
+        <div class="master">
+           <table class="header">
+             <tr>
+                <th><a href="/rules.html" class="th">Rules</a></th>
+                <th><a href="/faq.html" class="th">FAQ</a></th>
+                <th><a href="/puzzles.html" class="th">Puzzles</a></th>
+                <th><a href="/leaderboard.html" class="th">Leaderboard</a></th>
+                <th><a href="/updates.html" class="th">Updates</a></th>
+             </tr>
+           </table>
+        </div>
+        <p class="head">
+           <!-- Insert username with link to team page if logged in, or link to signup if not -->
+        </p>
+    </head>
+    <body>
+      <div class="master">
+        {% block content %}
+        {% endblock %}
+     </div>
+    </body>
+    <footer>
+        <p class="foot">
+           <!-- add this in when credits complete <a href="/credits.html"> -->&copy;<!-- </a> --> Eggplant Parms, 2018
+        </p>
+    </footer>
+</html>
