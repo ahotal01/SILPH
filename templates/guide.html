@@ -1,0 +1,34 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<h1>Beginner's Guide</h1>
+<p>Not sure where to start on most of these puzzles? Can't even figure out what you're supposed to do with the information? Well, here's the place for you!</p>
+<h3>Puzzles and Hunt Structure</h3>
+<p>Unlike traditional puzzles like crosswords or wordsearches, the puzzles featured in this event don't come along with a set of rules and a specific target. Users have to engage in creative and lateral thinking in order to manipulate the information presented into a form which they can use to find some hidden meaning within the puzzle. Regardless, whether you're an absolute beginner or a seasoned veteran, we hope you'll find puzzles which cater to your skill level!</p>
+<p>This hunt consists of two rounds; each round ends with a metapuzzle, which is a puzzle that the answers from the round's other puzzles feed into. As a general tip, try to look out for connections or similar properties shared by the answers which could feed into the metapuzzle's structure.</p>
+<h3>Common Mechanics</h3>
+<p>Still unsure where to go about finding the answer? Some common answer extraction mechanics include:</p>
+<p><em>Acrostics</em>. Sometimes, reading down the first letter, syllable, or word of each line in a puzzle can spell something. The answer could also be hidden in another recurring feature in the puzzle.</p>
+<p><em>Letter indexing</em>. Try indexing when you have a list of words or phrases and a corresponding list of numbers. Count into the word or phrase by the given number and record the letter in that position. For example, HEATMOR 5, EEVEE 2, and SLOWKING 4 gives you HEAT<b>M</b>OR, E<b>E</b>VEE, SLO<b>W</b>KING, spelling MEW. Indexes can also be expressed in a x/y form: for example, "Steel/Ghost-type Pok&eacute;mon (5/8)" could indicate that the answer has 8 letters, of which you need to take the 5th letter. In this case, it's the L from DOUBLADE; Honedge and Aegislash wouldn't fit due to the length restriction.</p>
+<p><em>Codes</em>. If you end up with a list of numbers you could try replacing the numbers with their corresponding letters in the alphabet, like this: 1 = A, 2 = B, 3 = C, ... 26 = Z. The use of other codes, such as ASCII, Braille, Morse code, flag semaphore, and binary, are also common in puzzle hunts.</p>
+<p><em>Rearrangements</em>. Puzzles rarely ever contain un-clued anagrams without any indication of ways to rearrange the letters. If you have a series of letters that don't seem to make any sense on their own, look out for natural orders that appear within the puzzle or other obvious orders (e.g. by numerical values or alphabetical orders).</p>
+<h3>Need a Hint?</h3>
+<p>If you need a nudge on a puzzle, you can spend one of your hint requests to either get a small push on the puzzle, or get a specific question regarding one of the puzzles solved. Hints can be requested from each puzzle's page.</p>
+<h3>Submitting Answers</h3>
+<p>The answer to each puzzle is always a single English term or phrase, containing only alphabetical characters&mdash;all other characters will be stripped from your submitted phrase. Once you think you've found the answer to a puzzle, log onto your team's account and submit the answer by clicking "Submit an answer" from the puzzle's page.</p>
+</br>
+<h3>Sample Puzzle</h3>
+<p>Here's a sample puzzle, which represents a relatively easy wordplay-style puzzle.</p>
+<p class="put this thing in monospace font please">First word of a move which copies stats (5) // Glass Animals song named after a genus of insects (6) // Strait in Scotland, separating the Inner and Outer Hebrides (5) // The swelling of soft tissues due to the accumulation of excess water (6) // "Holla'" for this unit of currency? (5) // One who herds livestock (6) // Movie where woman is knifed by motel owner (6) // Slightly drunk (5) // Aggressively masculine (5) // Short, half-suppressed laugh (6)</p>
+<p>Immediately, we're presented with 10 simple crossword-style clues, so the intuitive step is to solve each of these. We can fairly unambiguously arrive at the following answers: PSYCH, PSYLLA, MINCH, DROPSY, DOLLA, DROVER, PSYCHO, TIPSY, MACHO, TITTER.</p>
+<p>But that's not the final answer to the puzzle&mdash;remember, the puzzle answer has to be a single word or phrase! After this, we might notice that many parts of each of the words are repeated: there's two words ending in -CH, two ending in -LLA, two starting in DRO-, two ending in -CHO, and two starting with TI-. More importantly, though, there's 5 instances of the trigram 'PSY', one in each of the aforementioned pairs. Additionally, noticing this pattern acts as confirmation that we've gotten the correct answers for the clues, and lets us eliminate ambiguities.</p>
+<p>Now that we've observed the similarities between the words, we can try to pair up the words:</p>
+<ul>
+<li>PSYCH / MINCH</li>
+<li>PSYLLA / DOLLA</li>
+<li>DROPSY / DROVER</li>
+<li>PSYCHO / MACHO</li>
+<li>TIPSY / TITTER</li>
+</ul>
+<p>Note that for each pairing there's one word with 'PSY' and one without. For each pairing, reading the letters in the second word which replace the 'PSY' in the first word spells out MIN/DO/VER/MA/TTER, or the final answer, <b>MIND OVER MATTER</b>.</p>
+{ % endblock % }

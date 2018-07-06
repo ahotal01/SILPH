@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Register Here!</h1>
+<form method="post">
+    <table>
+        <tr>
+            <td><label for="teamname">Team Name:</label></td>
+            <td>
+                <input name="teamname" type="text" value="{{ teamname }}">
+                <span class="error">{{ errors.username_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password:</label></td>
+            <td>
+                <input name="password" type="password">
+                <span class="error">{{ errors.password_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="verify">Verify Password:</label></td>
+            <td>
+                <input name="verify" type="password">
+                <span class="error">{{ errors.verify_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="members">Team Member Names:</label></td>
+            <td>
+                <input name="members" type="text" value="{{ members }}">
+                <span class="error">{{ errors.members_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="discords">Team Discord Tags:</label></td>
+            <td>
+                <input name="discords" type="text" value="{{ discords }}">
+                <span class="error">{{ errors.dicords_error }}</span>
+            </td>
+        </tr>
+    </table>
+    <input type="submit">
+</form>
+<p>Enter the full list of your team members's names and Discord tags, with a comma between each. If you forget to add someone, don't worry! There's a place to add new members on your teampage.</p>
+</br>
+<p>
+    Already have an account? <a href="/login">Log in</a>
+</p>
+
+{% endblock %}

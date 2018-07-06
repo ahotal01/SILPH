@@ -1,0 +1,37 @@
+{ % extends "base_template.html" % }
+
+{ % block content % }
+   <div class="master">
+      <!-- Add badges functionality here -->
+      <table class="info">
+         <tr>
+            <th class="">Stats</th>
+            <th class="">Team Members</th>
+         </tr>
+         <tr>
+            <td><i>Coming Soon</i></td>
+            <td>
+               { % for member in members % }
+                  {{ member.displayname }},
+            </td>
+         </tr>
+      </table>
+      <form method="post">
+         <table class="addMember">
+            <tr>
+               <td><label for="displayname"><b>Display Name: </b></td>
+               <td>
+                  <input name="displayname" type="text" value="{{ displayname }}">
+               </td>
+            </tr>
+            <tr>
+               <td><label for="discord"><b>Discord Tag: </b></td>
+               <td>
+                  <input name="discord" type="text" value="{{ discord }}">
+               </td>
+            </tr>
+         </table>
+         <input type="submit">
+      </form>
+   </div>
+{ % endblock % }
