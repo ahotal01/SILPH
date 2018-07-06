@@ -11,11 +11,13 @@
          <tr>
             <td><i>Coming Soon</i></td>
             <td>
-               { % for member in members % }
-                  {{ member.displayname }},
+               {{ team.members }}</br></br>
+               <!-- make this only visible for members of that team + admins -->
+               <!-- {{ team.discords }}-->
             </td>
          </tr>
       </table>
+      <!-- make this only visible for members of that team + admins -->
       <form method="post">
          <table class="addMember">
             <tr>
@@ -33,5 +35,7 @@
          </table>
          <input type="submit">
       </form>
+      <p class="logout">Log out <a href="/logout">here</a></p>
+      <!-- end visibility issue -->
    </div>
 { % endblock % }
