@@ -414,7 +414,8 @@ class RulesFAQ(Handler):
 
 class Teampage(Handler):
     def get(self):
-        team = Team.filter()
+        uid = self.read_secure_cookie('team_id')
+        team = Team.get_by_id(int(uid))
 
         t = jinja_env.get_template("teampage.html")
         response = t.render(team = team)
