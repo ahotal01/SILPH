@@ -93,18 +93,18 @@ class Index(Handler):
     """ Handles requests coming in to '/' (the root of our site)
         e.g. www.flicklist.com/
     """
-
     def get(self):
-        self.redirect("/puzzles")
+        t = jinja_env.get_template("puzzles.html")
+        response = t.render()
+        self.response.write(response)
 
-
+"""
 class AddMovie(Handler):
-    """ Handles requests coming in to '/add'
+    # Handles requests coming in to '/add'
         e.g. www.flicklist.com/add
-    """
 
     def post(self):
-        """ User wants to add a new movie to their list """
+        # User wants to add a new movie to their list
 
         new_movie_title = self.request.get("new-movie")
 
@@ -134,12 +134,11 @@ class AddMovie(Handler):
 
 
 class WatchedMovie(Handler):
-    """ Handles requests coming in to '/watched-it'
+    # Handles requests coming in to '/watched-it'
         e.g. www.flicklist.com/watched-it
-    """
 
     def post(self):
-        """ User has watched a movie. """
+        # User has watched a movie.
         watched_movie_id = self.request.get("watched-movie")
         watched_movie = Movie.get_by_id( int(watched_movie_id) )
 
@@ -160,11 +159,10 @@ class WatchedMovie(Handler):
 
 
 class MovieRatings(Handler):
-    """ Handles requests coming in to '/ratings'
-    """
+    # Handles requests coming in to '/ratings'
 
     def get(self):
-        """ Show a list of the movies the user has already watched """
+        # Show a list of the movies the user has already watched
 
         # query for movies that the current user has already watched
         query = Movie.all().filter("owner", self.user).filter("watched", True)
@@ -175,7 +173,7 @@ class MovieRatings(Handler):
         self.response.write(response)
 
     def post(self):
-        """ User wants to rate a movie """
+        # User wants to rate a movie
 
         rating = self.request.get("rating")
         movie_id = self.request.get("movie")
@@ -196,11 +194,11 @@ class MovieRatings(Handler):
 
 
 class RecentlyWatchedMovies(Handler):
-    """ Handles requests coming in to '/recently-watched'
-    """
+    # Handles requests coming in to '/recently-watched'
+
 
     def get(self):
-        """ Display a list of movies that have recently been watched (by any user) """
+        # Display a list of movies that have recently been watched (by any user)
 
         # query for watched movies (by any user), sorted by how recently the movie was watched
         query = Movie.all().filter("watched", True).order("-datetime_watched")
@@ -214,7 +212,7 @@ class RecentlyWatchedMovies(Handler):
         t = jinja_env.get_template("recently-watched.html")
         response = t.render(movies = recently_watched_movies)
         self.response.write(response)
-
+"""
 
 class Login(Handler):
 
@@ -373,12 +371,61 @@ class Register(Handler):
             self.redirect('/teampage')
 
 
+class Credits(Handler):
+
+    def get(self):
+        t = jinja_env.get_template("credits.html")
+        response = t.render()
+        self.response.write(response)
+
+
+class Guide(Handler):
+
+    def get(self):
+        t = jinja_env.get_template("guide.html")
+        response = t.render()
+        self.response.write(response)
+
+
+""" TODO: Do it this way when making leaderboard
+class Teams(Handler):
+
+    def get(self):
+        if
+        t = jinja_env.get_template("leaderboard.html")
+        response = t.render()
+        self.response.write(response)
+"""
+class Leaderboard(Handler):
+
+    def get(self):
+        t = jinja_env.get_template("leaderboard.html")
+        response = t.render()
+        self.response.write(response)
+
+
+class RulesFAQ(Handler):
+
+    def get(self):
+        t = jinja_env.get_template("rules_faq.html")
+        response = t.render()
+        self.response.write(response)
+
+
+class Teampage(Handler):
+    def get(self):
+        team = Team.filter()
+
+        t = jinja_env.get_template("teampage.html")
+        response = t.render(team = team)
+        self.response.write(response)
+
 app = webapp2.WSGIApplication([
     ('/', Index),
     ('/credits', Credits),
     ('/guide', Guide),
     ('/leaderboard', Leaderboard),
-    ('/rules_faq', Rules&FAQ),
+    ('/rules_faq', RulesFAQ),
     ('/teampage', Teampage),
     ('/login', Login),
     ('/logout', Logout),
