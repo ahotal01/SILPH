@@ -404,10 +404,26 @@ class Leaderboard(Handler):
         self.response.write(response)
 
 
+class Puzzles(Handler):
+
+    def get(self):
+        t = jinja_env.get_template("puzzles.html")
+        response = t.render()
+        self.response.write(response)
+
+
 class RulesFAQ(Handler):
 
     def get(self):
         t = jinja_env.get_template("rules_faq.html")
+        response = t.render()
+        self.response.write(response)
+
+
+class Submit(Handler):
+
+    def get(self):
+        t = jinja_env.get_template("submit.html")
         response = t.render()
         self.response.write(response)
 
@@ -426,7 +442,9 @@ app = webapp2.WSGIApplication([
     ('/credits', Credits),
     ('/guide', Guide),
     ('/leaderboard', Leaderboard),
+    ('/puzzles', Puzzles),
     ('/rules_faq', RulesFAQ),
+    ('/submit', Submit),
     ('/teampage', Teampage),
     ('/login', Login),
     ('/logout', Logout),

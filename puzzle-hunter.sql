@@ -28,9 +28,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `teams` (
   `team_id` int(11) AUTO_INCREMENT PRIMARY KEY,
-  `name` varchar(20) NOT NULL UNIQUE,
+  `name` varchar(60) NOT NULL UNIQUE,
   `password` varchar(25) NOT NULL,
-  `members` varchar(600) DEFAULT NULL,
+  `members` varchar(150) DEFAULT NULL,
+  `discords` varchar(200) DEFAULT NULL,
   `puzzles_solved` int(2) DEFAULT 0,
   `hints_available` int(1) DEFAULT 0
 );
@@ -40,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `teams` (
 --
 
 INSERT INTO `teams` (`team_id`, `name`, `password`, `members`, `puzzles_solved`, `hints_available`) VALUES
-(1, 'Eggplant Parms', 'aaaggimmnnr18', 'CheeseMuffin#5866,Level51#0375,lovemathboy#9877,talkingtree#1556,Teikoku#1077', '41', '0');
+(1, 'Eggplant Parms', 'aaaggimmnnr18', 'CheeseMuffin,Level51,lovemathboy,talkingtree,Teikoku', 'CheeseMuffin#5866,Level51#0375,lovemathboy#9877,talkingtree#1556,Teikoku#1077', '41', '0');
 
 -- --------------------------------------------------------
 
@@ -61,13 +62,30 @@ CREATE TABLE IF NOT EXISTS `puzzles` (
 --
 
 INSERT INTO `puzzles` (`puzzle_id`, `name`, `answer`, `value`, `prerequisite`) VALUES
-(1, 'Thirty-Minute Puzzle', 'HAWAIIAN', '10', `0`),
-(2, 'Carthorse', 'CENTER STAGE', '10', '0'),
-(3, 'Bridging the Gap', 'ELECTRONVOLT', '10', '0'),
-(4, 'Expansion', 'ALTERNATE', '10', '0'),
-(5, 'Sense of Belonging', 'SPANISH FLU', '10', '0'),
-(6, 'Blind Spots', 'SPEED READING', '10', '0'),
-(7, 'Soul of Wit', 'SPECTRAL THIEVES', '20', '40');
+(1, `Double or Nothing`, `HAWAIIAN`, `5`, `0`),
+(2, `Carthorse`, `CENTER STAGE`, `5`, `0`),
+(3, `Bridging the Gap`, `ELECTRONVOLT`, `5`, `0`),
+(4, `Ambidextrous`, `ALTERNATE`, `5`, `0`),
+(5, `Sense of Belonging`, `SPANISH FLU`, `5`, `0`),
+(6, `Blind Spots`, `SPEED READING`, `5`, `0`),
+(7, `A Brief Oration`, `SPECTRAL THIEVES`, `1000`, `20`),
+(11, `Fan Service`, `BOULTER`, `10`, `0`),
+(12, `Gender Studies`, `RAIN DOWN`, `10`, `0`),
+(13, `Namesakes`, `NOVEL CANON`, `10`, `0`),
+(14, `Expansion`, `RECREATION`, `10`, `0`),
+(15, `word f(ind)`, `ONE IS TOO MANY`, `12`, `10`),
+(16, `CAP Contributor`, `BODY CAMOUFLAGE`, `14`, `20`),
+(17, `Spacetime`, `HOBBLER`, `16`, `30`),
+(18, `Building Bridges`, `FRIEND OR FOE`, `18`, `40`),
+(19, `Up Against The Wall`, `GLACIS RAMPART`, `20`, `52`),
+(20, `Basic Counting`, `FORESEE`, `22`, `66`),
+(21, `Suspect Test`, `VILLAIN`, `24`, `82`),
+(22, `World's Longest Port`, `SOUR GRAPES`, `26`, `100`),
+(23, `Casting Call`, `MAKE LEATHER`, `28`, `120`),
+(24, `Extremely Slow Cookie Clicker`, `WEALTHY`, `30`, `142`),
+(25, `A Wrinkle in Time`, `ACETONE`, `32`, `166`),
+(26, `Crazy Bracket`, `CLASSIC ARCADE GAMES`, `34`, `192`),
+(27, `The Final Battle`, `THE ELDER SCROLLER`, `1000`, `220`);
 
 -- --------------------------------------------------------
 
