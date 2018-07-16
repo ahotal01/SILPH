@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `teams` (
 -- Dumping data for table `teams`
 --
 
-INSERT INTO `teams` (`team_id`, `name`, `password`, `members`, `puzzles_solved`, `hints_available`) VALUES
-(1, 'Eggplant Parms', 'aaaggimmnnr18', 'CheeseMuffin,Level51,lovemathboy,talkingtree,Teikoku', 'CheeseMuffin#5866,Level51#0375,lovemathboy#9877,talkingtree#1556,Teikoku#1077', '41', '0');
+INSERT INTO `teams` (`team_id`, `name`, `password`, `members`, `puzzles_solved`, `r1_points`, `r2_points`, `hints_available`) VALUES
+(1, 'Eggplant Parms', 'aaaggimmnnr18', 'CheeseMuffin,Level51,lovemathboy,talkingtree,Teikoku', 'CheeseMuffin#5866,Level51#0375,lovemathboy#9877,talkingtree#1556,Teikoku#1077', '41', '9480', '9480', '0');
 
 -- --------------------------------------------------------
 
