@@ -12,6 +12,19 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
+table.leaderboard {
+    counter-reset: rowNumber;
+}
+
+tr.team {
+    counter-increment: rowNumber;
+}
+
+table.leaderboard tr td:first-child::before {
+    content: counter(rowNumber);
+    min-width: 1em;
+    margin-right: 0.5em;
+}
 table.word {
    display: inline-block;
 }
@@ -55,16 +68,23 @@ p.foot {
 div.master {
     padding: 20px;
     border: 2px solid gray;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 15px;
 	 background: #fefefe;
 }
 div.main {
 	 padding: 20px;
     border: 2px #000000;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 15px;
     background: linear-gradient(0deg, #6363b0, #8d8dcd);
+}
+div.locked {
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 15px;
+    background: #707070;
 }
 a:link {
     text-decoration: none;

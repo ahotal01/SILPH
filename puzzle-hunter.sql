@@ -33,6 +33,9 @@ CREATE TABLE IF NOT EXISTS `teams` (
   `members` varchar(150) DEFAULT NULL,
   `discords` varchar(200) DEFAULT NULL,
   `puzzles_solved` int(2) DEFAULT 0,
+  `r1_points` int(4) DEFAULT 0,
+  `r2_points` int(4) DEFAULT 0,
+  `points` int(4) DEFAULT 0,
   `hints_available` int(1) DEFAULT 0
 );
 
@@ -40,8 +43,8 @@ CREATE TABLE IF NOT EXISTS `teams` (
 -- Dumping data for table `teams`
 --
 
-INSERT INTO `teams` (`team_id`, `name`, `password`, `members`, `puzzles_solved`, `r1_points`, `r2_points`, `hints_available`) VALUES
-(1, 'Eggplant Parms', 'aaaggimmnnr18', 'CheeseMuffin,Level51,lovemathboy,talkingtree,Teikoku', 'CheeseMuffin#5866,Level51#0375,lovemathboy#9877,talkingtree#1556,Teikoku#1077', '41', '9480', '9480', '0');
+INSERT INTO `teams` (`team_id`, `name`, `password`, `members`, `discords`, `puzzles_solved`, `r1_points`, `r2_points`, `points`, `hints_available`) VALUES
+(1, 'Eggplant Parms', 'aaaggimmnnr18', 'CheeseMuffin,Level51,lovemathboy,talkingtree,Teikoku', 'Level51#0375', '41', '9480', '9480', '9480', '0');
 
 -- --------------------------------------------------------
 

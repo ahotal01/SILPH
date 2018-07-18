@@ -5,19 +5,28 @@
    <tr>
       <td>
          <div class="main">
+            <!-- if logged in: -->
             <a href="/R1-double-or-nothing.html">Double or Nothing</a>
+            <!-- otherwise: -->
+            <p>Double or Nothing</p>
             <p>Points: 5</p>
          </div>
       </td>
       <td>
          <div class="main">
+            <!-- if logged in: -->
             <a href="/R1-carthorse.html">Carthorse</a>
+            <!-- otherwise: -->
+            <p>Carthorse</p>
             <p>Points: 5</p>
          </div>
       </td>
       <td>
          <div class="main">
+            <!-- if logged in: -->
             <a href="/R1-bridging-the-gap.html">Bridging the Gap</a>
+            <!-- otherwise: -->
+            <p>Bridging the Gap</p>
             <p>Points: 5</p>
          </div>
       </td>
@@ -25,156 +34,230 @@
    <tr>
       <td>
          <div class="main">
+            <!-- if logged in: -->
             <a href="/R1-ambidextrous.html">Ambidextrous</a>
+            <!-- otherwise: -->
+            <p>Ambidextrous</p>
             <p>Points: 5</p>
          </div>
       </td>
       <td>
          <div class="main">
+            <!-- if logged in: -->
             <a href="/R1-sense-of-belonging.html">Sense of Belonging</a>
+            <!-- otherwise: -->
+            <p>Sense of Belonging</p>
             <p>Points: 5</p>
          </div>
       </td>
       <td>
          <div class="main">
+            <!-- if logged in: -->
             <a href="/R1-blind-spots.html">Blind Spots</a>
+            <!-- otherwise: -->
+            <p>Blind Spots</p>
             <p>Points: 5</p>
          </div>
       </td>
    </tr>
 </table>
-<!-- if team.r1_points >= 20:
-<div class="meta" href="/R1-a-brief-oration.html"-->
-<!-- otherwise: -->
-<div class="meta">
+<!-- if team.r1_points >= 20: -->
+<div class="meta" href="/R1-a-brief-oration.html">
    <p>A Brief Oration</p>
+</div>
+<!-- otherwise: -->
+<div class="meta_locked">
+   <p>???</p>
    <p>Points required: 20</p>
 </div>
 <!-- if team.r1_points >= 1000: -->
 <hr>
+<h4>Badge Points Earned: {{ team.r2_points }}</h4>
 <table class="round2">
    <tr>
       <td>
          <div class="main" href="/R2-fan-service.html">
             <p>Fan Service</p>
-            <p>Badge Points: 10</p>
+            <img src="../static/images/badge1.png"><p>Badge Points: 10</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <div class="main" href="/R2-gender-studies.html">
             <p>Gender Studies</p>
-            <p>Badge Points: 10</p>
+            <img src="../static/images/badge2.png"><p>Badge Points: 10</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <div class="main" href="/R2-namesakes.html">
             <p>Namesakes</p>
-            <p>Badge Points: 10</p>
+            <img src="../static/images/badge3.png"><p>Badge Points: 10</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <div class="main" href="/R2-expansion.html">
             <p>Expansion</p>
-            <p>Badge Points: 10</p>
+            <img src="../static/images/badge4.png"><p>Badge Points: 10</p>
          </div>
       </td>
    </tr>
    <tr>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-word-f(ind).html">
             <p>word f(ind)</p>
-            <p>Badge Points: 12</p>
+            <img src="../static/images/badge5.png"><p>Badge Points: 12</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 10</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-cap-contributor.html">
             <p>CAP Contributor</p>
-            <p>Badge Points: 14</p>
+            <img src="../static/images/badge6.png"><p>Badge Points: 14</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 20</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-spacetime.html">
             <p>Spacetime</p>
-            <p>Badge Points: 16</p>
+            <img src="../static/images/badge7.png"><p>Badge Points: 16</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 30</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-building-bridges.html">
             <p>Building Bridges</p>
-            <p>Badge Points: 18</p>
+            <img src="../static/images/badge8.png"><p>Badge Points: 18</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 40</p>
          </div>
       </td>
    </tr>
    <tr>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-up-against-the-wall.html">
             <p>Up Against The Wall</p>
-            <p>Badge Points: 20</p>
+            <img src="../static/images/badge9.png"><p>Badge Points: 20</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 52</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-basic-counting.html">
             <p>Basic Counting</p>
-            <p>Badge Points: 22</p>
+            <img src="../static/images/badge10.png"><p>Badge Points: 22</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 66</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-suspect-test.html">
             <p>Suspect Test</p>
-            <p>Badge Points: 24</p>
+            <img src="../static/images/badge11.png"><p>Badge Points: 24</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 82</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough -->
+         <div class="main" href="/R2-worlds-longest-port.html">
             <p>World's Longest Port</p>
-            <p>Badge Points: 26</p>
+            <img src="../static/images/badge12.png"><p>Badge Points: 26</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 100</p>
          </div>
       </td>
    </tr>
    <tr>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-casting-call.html">
             <p>Casting Call</p>
-            <p>Badge Points: 28</p>
+            <img src="../static/images/badge13.png"><p>Badge Points: 28</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 120</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-extremely-slow-cookie-clicker.html">
             <p>Extremely Slow Cookie Clicker</p>
-            <p>Badge Points: 30</p>
+            <img src="../static/images/badge14.png"><p>Badge Points: 30</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 142</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-the-last-word.html">
             <p>The Last Word</p>
-            <p>Badge Points: 32</p>
+            <img src="../static/images/badge15.png"><p>Badge Points: 32</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 166</p>
          </div>
       </td>
       <td>
-         <div class="main" href="/R2-fan-service.html">
+         <!-- if r2points is enough: -->
+         <div class="main" href="/R2-crazy-bracket.html">
             <p>Crazy Bracket</p>
-            <p>Badge Points: 34</p>
+            <img src="../static/images/badge16.png"><p>Badge Points: 34</p>
+         </div>
+         <!-- otherwise: -->
+         <div class="locked">
+            <p>???</p>
             <p>Badge Points Required: 192</p>
          </div>
       </td>
    </tr>
 </table>
-<!-- if team.r2_points >= 220:
-<div class="meta2" href="/R2-the-final-battle.html"> -->
-<!-- if team.r2_points >= 100 -->
-<div class="meta2">
+<!-- if team.r2_points >= 220: -->
+<div class="meta2" href="/R2-the-final-battle.html">
    <p>The Final Battle</p>
+</div>
+<!-- if team.r2_points >= 120 -->
+<div class="meta2">
+   <p>???</p>
    <p>Badge Points Required: 220</p>
 </div>
 { % endblock % }

@@ -2,4 +2,19 @@
 
 { % block content % }
 <h2>Coming Soon!...</h2>
+
+<table class="leaderboard">
+   <tr>
+      <th>Rank     Team</th>
+      <th>Points</th>
+      <th>Finish Time</th>
+   </tr>
+   { for team in teams }
+   <tr class="team">
+      <td>{ team.teamname }</td>
+      <td>{ team.points }</td>
+      <td>{ team.finishtime }<td>
+   </tr>
+   { endfor }
+</table>
 { % endblock % }

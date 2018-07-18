@@ -9,12 +9,11 @@
             <th class="">Team Members</th>
          </tr>
          <tr>
-            <td><i>Coming Soon</i></td>
             <td>
-               {{ team.members }}</br></br>
-               <!-- make this only visible for members of that team + admins before hunt -->
-               <!-- {{ team.discords }}-->
+               <p>Points: {{ team.points }}</p>
+               <p>Hints available: {{ team.hints_available }}</p>
             </td>
+            <td>{{ team.members }}</td>
          </tr>
       </table>
       <!-- make this only visible for members of that team + admins before hunt -->
@@ -24,12 +23,6 @@
                <td><label for="displayname"><b>Display Name: </b></td>
                <td>
                   <input name="displayname" type="text" value="{{ displayname }}">
-               </td>
-            </tr>
-            <tr>
-               <td><label for="discord"><b>Discord Tag: </b></td>
-               <td>
-                  <input name="discord" type="text" value="{{ discord }}">
                </td>
             </tr>
          </table>
