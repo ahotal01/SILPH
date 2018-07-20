@@ -1,24 +1,47 @@
-{% extends 'base_template.html' %}
-
-{% block content %}
-<h1>Login</h1>
-    <p class="error">{{ error }}</p>
-    <form method="post">
-        <table>
-            <tr>
-                <td><label for="teamname">Team Name</label></td>
-                <td>
-                    <input name="teamname" type="text" value="{{ teamname }}">
-                </td>
-            </tr>
-            <tr>
-                <td><label for="password">Password</label></td>
-                <td>
-                    <input name="password" type="password">
-                </td>
-            </tr>
-        </table>
-        <input type="submit">
-    </form>
-    <p>Don't have an account? <a href="/register">Create one!</a></p>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/templates/design_template.css">
+        <img src="../static/images/SPH_logo.png" alt="logo" class="logo">
+        <div class="master">
+           <table class="header">
+             <tr>
+                <th class="header"><a href="/rules_faq" class="th">Rules + FAQ</a></th>
+                <th class="header"><a href="/guide" class="th">Beginner's Guide</a></th>
+                <th class="header"><a href="/puzzles" class="th">Puzzles</a></th>
+                <th class="header"><a href="/leaderboard" class="th">Leaderboard</a></th>
+                <th class="header"><a href="/updates" class="th">Updates</a></th>
+             </tr>
+           </table>
+        </div>
+    </head>
+    <body>
+      <div class="master">
+         <h1>Login</h1>
+             <p class="error">{{ error }}</p>
+             <form method="post">
+                 <table>
+                     <tr>
+                         <td><label for="teamname">Team Name</label></td>
+                         <td>
+                             <input name="teamname" type="text" value="{{ teamname }}">
+                         </td>
+                     </tr>
+                     <tr>
+                         <td><label for="password">Password</label></td>
+                         <td>
+                             <input name="password" type="password">
+                         </td>
+                     </tr>
+                 </table>
+                 <input type="submit">
+             </form>
+             <p>Don't have an account? <a href="/register">Create one!</a></p>
+     </div>
+    </body>
+    <footer>
+        <p class="foot">
+           <a href="/credits">&copy;</a> Eggplant Parms, 2018
+        </p>
+    </footer>
+</html>

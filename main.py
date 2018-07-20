@@ -10,10 +10,10 @@ jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))
 # a list of pages that anyone is allowed to visit
 # (any others require logging in)
 allowed_routes = [
+    '/',
     '/credits',
     '/guide',
     '/leaderboard',
-    '/puzzles',
     '/rules_faq',
     '/login',
     '/register'
