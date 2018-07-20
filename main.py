@@ -87,7 +87,7 @@ class Index(Handler):
         e.g. www.flicklist.com/
     """
     def get(self):
-        t = jinja_env.get_template("puzzles.html")
+        t = jinja_env.get_template("index.html")
         response = t.render()
         self.response.write(response)
 
