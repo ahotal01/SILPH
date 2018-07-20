@@ -10,11 +10,13 @@ jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))
 # a list of pages that anyone is allowed to visit
 # (any others require logging in)
 allowed_routes = [
-    "/login",
-    "/logout",
-    "/register"
-    "/rules_faq"
-    "/guide"
+    '/credits',
+    '/guide',
+    '/leaderboard',
+    '/puzzles',
+    '/rules_faq',
+    '/login',
+    '/register'
 ]
 
 class Team(db.Model):
@@ -23,15 +25,6 @@ class Team(db.Model):
     pw_hash = db.StringProperty(required = True)
     members = db.StringProperty(required = True)
     discords = db.StringProperty(required = True)
-
-class Movie(db.Model):
-    """ Represents a movie that a user wants to watch or has watched """
-    title = db.StringProperty(required = True)
-    created = db.DateTimeProperty(auto_now_add = True)
-    watched = db.BooleanProperty(required = True, default = False)
-    datetime_watched = db.DateTimeProperty()
-    rating = db.StringProperty()
-    owner = db.ReferenceProperty(User, required = True)
 
 
 class Handler(webapp2.RequestHandler):
@@ -254,7 +247,7 @@ class Register(Handler):
         """ Returns the teamname string untouched if it is valid,
             otherwise returns an empty string
         """
-        TEAM_RE = re.compile(r"^[a-zA-Z0-9_-]{3,25}$")
+        TEAM_RE = re.compile(r"^.{3,100}$")
         if TEAM_RE.match(teamname):
             return teamname
         else:
@@ -293,20 +286,9 @@ class Register(Handler):
         """ Returns the discords string untouched if it is valid,
             otherwise returns an empty string
         """
-        DCS_RE = re.compile(r"^[-\w\s]+(?:,[-\w\s]+)+{11,200}$")
+        DCS_RE = re.compile(r"^.+#[\d]{4}$")
         if DCS_RE.match(discords):
             return discords
-        else:
-            return ""
-
-    def validate_verify2(self, members, discords):
-        """ Returns 'SPH' if they contain the same number of elements,
-            otherwise returns an empty string
-        """
-        mems_list = members.split(",")
-        disc_list = discords.split(",")
-        if len(mems_list) == len(disc_list):
-            return "SPH"
         else:
             return ""
 
@@ -329,7 +311,6 @@ class Register(Handler):
         verify = self.validate_verify(submitted_password, submitted_verify)
         members = self.validate_members(submitted_members)
         discords = self.validate_discords(submitted_discords)
-        verify2 = self.validate_verify2(submitted_members, submitted_discords)
 
         errors = {}
         existing_team = self.get_team_by_name(teamname)
@@ -338,7 +319,7 @@ class Register(Handler):
         if existing_team:
             errors['teamname_error'] = "A team with that name already exists"
             has_error = True
-        elif (teamname and password and verify and members and discords and verify2):
+        elif (teamname and password and verify and members and discords):
             # create new user object
             pw_hash = hashutils.make_pw_hash(teamname, password)
             team = Team(teamname=teamname, pw_hash=pw_hash)
@@ -361,7 +342,7 @@ class Register(Handler):
                 errors['members_error'] = "That's not a valid list of members"
 
             if not discords:
-                errors['discords_error'] = "That's not a valid list of discord tags"
+                errors['discords_error'] = "That's not a valid discord tag"
 
         if has_error:
             t = jinja_env.get_template("register.html")
@@ -427,6 +408,13 @@ class Submit(Handler):
         response = t.render()
         self.response.write(response)
 
+    def post(self):
+        answer = self.request.get("submission")
+        hint = self.request.get("hint_req")
+
+        t = jinja_env.get_template("submit.html")
+        response = t.render()
+        self.response.write(response)
 
 class Teampage(Handler):
     def get(self):

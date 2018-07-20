@@ -1,0 +1,40 @@
+{ % extends 'base_template.html' % }
+
+{ % block content % }
+<h1>{{ puzzle.name }}</h1>
+<!-- if team has solved: -->
+<h5>{{ puzzle.answer }}</h5>
+<p>Guesses remaining: {{ guesses_remaining }}</p>
+<form method="post">
+   <table class="answer">
+      <tr>
+         <td><b>Enter your guess:</b></td>
+         <td>
+            <input name="submission" type="text">
+         </td>
+      </tr>
+      <input type="submit">
+   </table>
+</form>
+<hr>
+<p>Hints remaining: {{ team.hints_available }}</p>
+<form method="post">
+   <table class="hint">
+      <tr>
+         <td>
+            <p>You have two options for a hint:</p>
+            <ol>
+               <li>Describe your team's progress so far in as much detail as possible to get a nudge in the right direction. It's to your advantage to be specific, as that ensures we are less likely to tell you something you already knew.</li>
+               <li>Ask a specific question. We reserve the right to refuse to answer requests that we feel ask too much.</li>
+            </ol>
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <input name="hint_req" type="text">
+         </td>
+      </tr>
+      <input type="submit">
+   </table>
+</form>
+{ % endblock % }

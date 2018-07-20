@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `puzzles` (
 --
 
 INSERT INTO `puzzles` (`puzzle_id`, `name`, `answer`, `value`, `prerequisite`) VALUES
-(1, `Double or Nothing`, `HAWAIIAN`, `5`, `0`),
-(2, `Carthorse`, `CENTER STAGE`, `5`, `0`),
+(1, `Double or Nothing`, `HAWAIIAN PIZZA`, `5`, `0`),
+(2, `A Hating at the Carthorses`, `CENTER STAGE`, `5`, `0`),
 (3, `Bridging the Gap`, `ELECTRONVOLT`, `5`, `0`),
 (4, `Ambidextrous`, `ALTERNATE`, `5`, `0`),
 (5, `Sense of Belonging`, `SPANISH FLU`, `5`, `0`),
@@ -85,8 +85,8 @@ INSERT INTO `puzzles` (`puzzle_id`, `name`, `answer`, `value`, `prerequisite`) V
 (21, `Suspect Test`, `VILLAIN`, `24`, `82`),
 (22, `World's Longest Port`, `SOUR GRAPES`, `26`, `100`),
 (23, `Casting Call`, `MAKE LEATHER`, `28`, `120`),
-(24, `Extremely Slow Cookie Clicker`, `WEALTHY`, `30`, `142`),
-(25, `A Wrinkle in Time`, `ACETONE`, `32`, `166`),
+(24, `Mint Condition`, `WEALTHY`, `30`, `142`),
+(25, `The Last Word`, `WORST ENEMY`, `32`, `166`),
 (26, `Crazy Bracket`, `CLASSIC ARCADE GAMES`, `34`, `192`),
 (27, `The Final Battle`, `THE ELDER SCROLLER`, `1000`, `220`);
 

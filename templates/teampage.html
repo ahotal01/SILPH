@@ -1,34 +1,32 @@
 { % extends "base_template.html" % }
 
 { % block content % }
-   <div class="master">
-      <!-- Add badges functionality here -->
-      <table class="info">
+   <!-- Add badges functionality here -->
+   <table class="info">
+      <tr>
+         <th class="">Stats</th>
+         <th class="">Team Members</th>
+      </tr>
+      <tr>
+         <td>
+            <p>Points: {{ team.points }}</p>
+            <p>Hints available: {{ team.hints_available }}</p>
+         </td>
+         <td>{{ team.members }}</td>
+      </tr>
+   </table>
+   <!-- make this only visible for members of that team + admins before hunt -->
+   <form method="post">
+      <table class="addMember">
          <tr>
-            <th class="">Stats</th>
-            <th class="">Team Members</th>
-         </tr>
-         <tr>
+            <td><label for="displayname"><b>Display Name: </b></td>
             <td>
-               <p>Points: {{ team.points }}</p>
-               <p>Hints available: {{ team.hints_available }}</p>
+               <input name="displayname" type="text" value="{{ displayname }}">
             </td>
-            <td>{{ team.members }}</td>
          </tr>
       </table>
-      <!-- make this only visible for members of that team + admins before hunt -->
-      <form method="post">
-         <table class="addMember">
-            <tr>
-               <td><label for="displayname"><b>Display Name: </b></td>
-               <td>
-                  <input name="displayname" type="text" value="{{ displayname }}">
-               </td>
-            </tr>
-         </table>
-         <input type="submit">
-      </form>
-      <p class="logout">Log out <a href="/logout">here</a></p>
-      <!-- end visibility issue -->
-   </div>
+      <input type="submit">
+   </form>
+   <p class="logout">Log out <a href="/logout">here</a></p>
+   <!-- end visibility issue -->
 { % endblock % }
