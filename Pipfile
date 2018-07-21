@@ -9,6 +9,7 @@ webapp2 = "*"
 gunicorn = "*"
 webob = "*"
 jinja = "*"
+jinja2 = "*"
 
 [requires]
 
