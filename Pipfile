@@ -1,0 +1,16 @@
+[[source]]
+
+url = "https://smogonpuzzlehunt.com"
+verify_ssl = true
+
+
+[packages]
+
+django = "*"
+gunicorn = "*"
+django-heroku = "*"
+
+
+[requires]
+
+python_version = "3.6"
